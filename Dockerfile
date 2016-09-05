@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-FROM teego/ubuntu:xenial
+FROM teego/system:trusty
 
 MAINTAINER Aleksandr Zykov <tiger@vilijavis.lt>
 
