@@ -4,6 +4,21 @@ FROM teego/system:artful
 
 MAINTAINER Aleksandr Zykov <tiger@vilijavis.lt>
 
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN ( \
+        apt-get update -q \
+    &&  apt-get upgrade -qy --no-install-recommends \
+    &&  apt-get clean -qy \
+    )
+    
+RUN ( \
+        apt-get install -qy --no-install-recommends \
+            gnupg \
+            dirmngr \
+    &&   apt-get clean -qy \
+    )
+    
 # gpg keys listed at https://github.com/nodejs/node
 RUN set -ex \
   && for key in \
