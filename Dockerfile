@@ -48,4 +48,4 @@ RUN ( \
         npm i npm@latest -g \
     )
 
-CMD [ "node" ]
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
